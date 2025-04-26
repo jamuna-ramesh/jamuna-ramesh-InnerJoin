@@ -1,5 +1,5 @@
 import Util.ConnectionUtil;
-import Util.FileUtil;
+//import Util.FileUtil;
 import kotlin.Pair;
 
 import java.sql.*;
@@ -90,10 +90,9 @@ public class InnerJoinActivity {
          * Note: There should not be a wild card (*) in your statement. You will need to specify the column in your
          * statement by writing table.column, because the column names may be ambiguous between class and student.
          */
-        String sql = FileUtil.parseSQLFile("problem1.sql");
-
-
-
+        //String sql = FileUtil.parseSQLFile("problem1.sql");
+        
+        String sql = "SELECT student.id, student.student_name FROM class INNER JOIN student ON class.class_title = student.class_title WHERE class.teacher_name = 'Ms. Lovelace'";
         Set<Pair<Integer, String>> results = new HashSet<>();
         try {
             Connection connection = ConnectionUtil.getConnection();
